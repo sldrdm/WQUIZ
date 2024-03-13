@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+/* CSS ile varsayılan seçili metin stilleri */
+::selection {
+    background-color: #ffcc00; /* Arka plan rengi */
+    color: #000; /* Yazı rengi */
+}
+/* Seçili metinler haricindeki diğer tüm metinlerin stilleri */
+body *:not(::selection) {
+    background-color: transparent; /* Diğer metinlerin arka plan rengi */
+    color: inherit; /* Diğer metinlerin yazı rengi, varsayılan olarak miras alınan değerler */
+}
+</style>
+</head>
+<body>
+<!-- Sayfanın içeriği -->
+<h1>Başlık</h1>
+<p>Bu bir paragraf.</p>
+<p>Bu da bir paragraf.</p>
+<script>
+// JavaScript ile tüm metin öğelerini seç
+document.addEventListener("selectionchange", function() {
+    var selectedText = window.getSelection().toString();
+    if (selectedText) {
+        document.body.classList.add("text-selected");
+    } else {
+        document.body.classList.remove("text-selected");
+    }
+});
+</script>
+</body>
+</html>
