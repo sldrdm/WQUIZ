@@ -710,7 +710,6 @@ body *:not(::selection) {
     height: 1.5vh;
     /* removes browser default style*/
     appearance: none;
-    /* webkit*/
     -webkit-appearance: none;
     accent-color: #000000;
     background-color: transparent;

@@ -1,4 +1,3 @@
-// an object containing user information
 window.userInfo = {
     username: "admin",
     password: "1234",

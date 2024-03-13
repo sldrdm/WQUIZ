@@ -274,7 +274,6 @@ function saveCorrectThemes(username, theme) {
 //         alert("Username and Password needed!");
 //         return false;
 //     } else {
-//         // saves user information to localStorage
 //         saveUserInfo(usernameInput, passwordInput);
 //         return true;
 //     }

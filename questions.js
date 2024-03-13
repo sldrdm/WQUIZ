@@ -143,4 +143,16 @@ let questions = [
     //         "D. Zamazingo"
     //     ]
     // },
+    // {
+    //     numb: 13,
+    //     theme: "",
+    //     question: "What is the Turkish word for 'Dance'?",
+    //     answer: "C. Dans",
+    //     options: [
+    //         "A. Denk",
+    //         "B. Dank",
+    //         "C. Dans",
+    //         "D. Mızrak"
+    //     ]
+    // },
 ]
