@@ -3,4 +3,4 @@ window.userExamData = {
     2: { correct: true, userAnswer: 'getUserExamData()' }
 };
 
-localStorage.setItem('userExamData', JSON.stringify(userExamData));
+localStorage.setItem('userExamData', JSON.stringify(window.userExamData));
