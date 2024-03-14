@@ -30,8 +30,8 @@ WQUIZ, measures your English-Turkish vocabulary. While doing this, it also analy
 
 ## 🚀 Usage
 
-Use Firefox for best performance.
-It keeps the data in local storage, so before running it, you must give permission to use local storage to the site from the browser you use.
+Use Firefox for best performance.  
+It keeps the data in local storage, so before running it, you must give permission to use local storage to the site from the browser you use.  
 Make sure you have granted full authorization. To check on the page:
 ```bash
   [right click->inspect->application->local storage]
