@@ -1,8 +1,8 @@
-﻿WQUIZ
+﻿ WQUIZ
 -----
 ## WQUIZ, measures your English-Turkish vocabulary. While doing this, it also analyzes how long words are kept in your memory according to their types.
 ----------------------------------
-# USE FIREFOX FOR BEST PERFORMANCE
+## USE FIREFOX FOR BEST PERFORMANCE
 ----------------------------------
 ## IT KEEPES THE DATA IN LOCAL STORAGE, SO BEFORE RUNNING IT, YOU MUST GIVE PERMISSION TO USE LOCAL STORAGE TO THE SITE FROM THE BROWSER YOU USE.
 ---------------------------------------------------------------------
