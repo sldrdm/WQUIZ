@@ -60,7 +60,7 @@ Or if there are problems with the page even though you do not receive any errors
   <img src="https://contrib.rocks/image?repo=BatuhanARK/WQUIZ." />
 </a>
 
-## 📝 License
+## ©️ License
 
 Copyright © 2024 [Batuhan Arık](https://github.com/BatuhanARK).  
 This project is [MIT](https://github.com/BatuhanARK/WQUIZ./blob/main/LICENSE.txt) licensed.
