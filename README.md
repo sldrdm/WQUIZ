@@ -36,7 +36,7 @@ Make sure you have granted full authorization. To check on the page:
 ```bash
   [right click->inspect->application->local storage]
   (check if there are 2 keys named 'userInfo' and 'userExamData'.)
-  (if they are there, it means it is working properly.)
+  (if they are there, it means it is working properly.) 
 ```
 If you think it is not working properly, you can check the error code on the console. To check on the page:
 ```bash
