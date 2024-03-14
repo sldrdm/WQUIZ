@@ -21,10 +21,10 @@ WQUIZ, measures your English-Turkish vocabulary. While doing this, it also analy
 ## ⚡ Installation
 
 ```python
-  open the folder in VSCODE
+  open the folder with VSCODE
   download 'Live Server' extension
-  open main.html
-  right click anywhere in main.html
+  open 'main.html'
+  right click anywhere in 'main.html'
   select the 'Open with Live Server' option
 ```
 
