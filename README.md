@@ -5,13 +5,13 @@ WQUIZ, measures your English-Turkish vocabulary. While doing this, it also analy
 ## 📄 Description
 
 ⚪ The project provides a platform to manage users' vocabulary learning and testing process.  
-    ⚪ Users can register, log in, and reset their passwords when necessary.  
+    ⚫ Users can register, log in, and reset their passwords when necessary.  
     ⚪ The word adding module allows users to add English words, Turkish equivalents, sentence examples, pictures, and audio pronunciations.  
-    ⚪ The quiz module is designed to test users' vocabulary knowledge.  
+    ⚫ The quiz module is designed to test users' vocabulary knowledge.  
     ⚪ Questions are presented at regular intervals in line with the determined algorithm and are adapted according to the knowledge level of the users.  
-    ⚪ Users can also configure various preferences in the settings section, for example, they can change the number of words output per day.  
+    ⚫ Users can also configure various preferences in the settings section, for example, they can change the number of words output per day.  
     ⚪ Finally, users can get an analysis report based on the analyzed words.  
-    ⚪ This report shows the student's success percentage and how successful they are in which subjects, and it can also be printed out when desired.  
+    ⚫ This report shows the student's success percentage and how successful they are in which subjects, and it can also be printed out when desired.  
     ⚪ This platform offers a comprehensive set of tools to organize and optimize the vocabulary learning process.
 
 ## ✨ Visuals
