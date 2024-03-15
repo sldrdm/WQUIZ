@@ -1,19 +1,16 @@
-const userInfo = JSON.parse(localStorage.getItem('userInfo'));
 const userExamData = JSON.parse(localStorage.getItem('userExamData'));
-const popupInfo = document.querySelector('.popup-info');
-const main = document.querySelector('.main');
+const forgotPassword = document.querySelector('.forgot-password');
+const registerPage = document.getElementById('registerPage');
 const quizSection = document.querySelector('.quiz-section');
+const optionList = document.querySelector('.option-list');
+const popupInfo = document.querySelector('.popup-info');
+const resultBox = document.querySelector('.result-box');
 const quizBox = document.querySelector('.quiz-box');
 const nextBtn = document.querySelector('.next-btn');
-const optionList = document.querySelector('.option-list');
-const resultBox = document.querySelector('.result-box');
 const regPage = document.querySelector('.r-p');
-const forgotPassword = document.querySelector('.forgot-password');
+const regLog = document.querySelector('.regLog');
 const navBar = document.querySelector('.navbar');
-//  to check if you get the data from other js files
-console.log(userInfo.username);
-console.log(userInfo.password);
-console.log(userExamData[1].correct);
+const main = document.querySelector('.main');
 // defines initial values and runs initial functions
 window.onload = resetQuiz;
 //  runs a function for each defined 'click' action
@@ -52,24 +49,38 @@ document.addEventListener("click", function (event) {
             showResultBox();
         }
     }
-    // opens main page
-    if (target.classList.contains('login-btn')) {
+    //  checks login form
+    if (target.classList.contains('login')) {
         event.preventDefault();
-        if (checkLogin()) {
-            regPage.classList.add('active');
-            navBar.classList.add('active');
-        }
+        checkLogin();
+    }
+    // checks register form
+    if (target.classList.contains('register')) {
+        event.preventDefault();
+        checkRegister();
     }
     // shows admin username and password when clicked on forgot password
     if (target.classList.contains('forgot-password')) {
         event.preventDefault();
         alert("username: 'admin', password: '1234'");
     }
+    if (target.classList.contains('registerLink')) {
+        event.preventDefault();
+        toggleRegisterForm(true);
+    }
+    if (target.classList.contains('loginLink')) {
+        event.preventDefault();
+        toggleRegisterForm(false);
+    }
 });
-//  prevents def and checks login
-document.querySelector('.registration-page form').addEventListener('submit', function (event) {
-    event.preventDefault();
-    checkLogin();
+// seletcs all text elements
+document.addEventListener("selectionchange", () => {
+    var selectedText = window.getSelection().toString();
+    if (selectedText) {
+        document.body.classList.add("text-selected");
+    } else {
+        document.body.classList.remove("text-selected");
+    }
 });
 //  little animation for 'forgot password?' changes text
 forgotPassword.addEventListener('mouseover', () => {
@@ -81,15 +92,6 @@ forgotPassword.addEventListener('mouseout', () => {
     setTimeout(() => {
         forgotPassword.innerHTML = "Forgot password?";
     }, 300);
-});
-// seletcs all text elements
-document.addEventListener("selectionchange", function () {
-    var selectedText = window.getSelection().toString();
-    if (selectedText) {
-        document.body.classList.add("text-selected");
-    } else {
-        document.body.classList.remove("text-selected");
-    }
 });
 // function for repeated actions
 function resetQuiz() {
@@ -200,28 +202,64 @@ function showResultBox() {
 }
 // saves user information
 function saveUserInfo(username, password) {
-    // stores user information as a JavaScript object
-    userInfo.username = username;
-    userInfo.password = password;
-    // saves it to localStorage
-    localStorage.setItem('userInfo', JSON.stringify(userInfo));
+    // gets current user information from localStorage
+    var existingUserInfo = JSON.parse(localStorage.getItem('userInfo')) || {};
+    var newUserId = Object.keys(existingUserInfo).length + 1;
+    // adds new user information
+    existingUserInfo[newUserId] = { username: username, password: password };
+    // saves updated user information to localStorage
+    localStorage.setItem('userInfo', JSON.stringify(existingUserInfo));
 }
 // checks whether login is successful or not
 function checkLogin() {
     var usernameInput = document.querySelector('.username').value;
     var passwordInput = document.querySelector('.password').value;
+    // for admin
+    if (usernameInput === "admin" && passwordInput === "1234") {
+        regPage.classList.add('active');
+        regLog.classList.add('active');
+        navBar.classList.add('active');
+        console.log("admin logged in");
+        return true;
+    }
     if (usernameInput === "" && passwordInput === "") {
         alert("Username and Password needed!");
         return false;
     } else {
-        if (userInfo) {
+        // retrieves updated user information from localStorage every time
+        var userList = JSON.parse(localStorage.getItem('userInfo'));
+        if (userList) {
             // compares login information with information in localStorage
-            if (usernameInput === userInfo.username && passwordInput === userInfo.password) {
-                return true;
+            for (var userId in userList) {
+                if (userList.hasOwnProperty(userId)) {
+                    var user = userList[userId];
+                    if (usernameInput === user.username && passwordInput === user.password) {
+                        regPage.classList.add('active');
+                        regLog.classList.add('active');
+                        navBar.classList.add('active');
+                        console.log("login successful");
+                        return true;
+                    }
+                }
             }
         }
         alert("Incorrect Username or Password!");
         return false;
+    }
+}
+// checks whether register is successful or not
+function checkRegister() {
+    var usernameInput = document.querySelector('.newUsername').value;
+    var passwordInput = document.querySelector('.newPassword').value;
+    if (usernameInput === "" || passwordInput === "") {
+        alert("Username and Password needed!");
+        return false;
+    } else {
+        saveUserInfo(usernameInput, passwordInput);
+        alert("Registration successful!");
+        toggleRegisterForm(false);
+        console.log("register successful");
+        return true;
     }
 }
 // updates the user's exam data
@@ -258,23 +296,21 @@ function saveCorrectThemes(username, theme) {
     userData.correctThemes[theme]++;
     localStorage.setItem(username, JSON.stringify(userData));
 }
+//  register form show/hide function
+function toggleRegisterForm(show) {
+    if (show) {
+        registerPage.classList.add('active');
+        regPage.classList.add('active');
+    } else {
+        registerPage.classList.remove('active');
+        regPage.classList.remove('active');
+    }
+}
+//  to check if you get the data from other js files
+console.log(userExamData[1].correct);
 
 // EXAMPLE
 // saveUserAnswer("ahmet123", "question1", "A");
 // saveIncorrectQuestions("ahmet123", ["question2", "question5"]);
 // saveCorrectThemes("ahmet123", "animal");
 // analyzeUserExam("ahmet123");
-
-// checks whether register is successful or not
-// function checkRegister() {
-//     var usernameInput  = document.querySelector('.username').value;
-//     var passwordInput  = document.querySelector('.password').value;
-
-//     if (usernameInput === "" || passwordInput === "") {
-//         alert("Username and Password needed!");
-//         return false;
-//     } else {
-//         saveUserInfo(usernameInput, passwordInput);
-//         return true;
-//     }
-// }

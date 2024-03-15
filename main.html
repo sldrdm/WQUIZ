@@ -21,8 +21,8 @@
                     <li class="nav-link"><a href="#">Home</a></li>
                     <li class="nav-link"><a href="https://github.com/BatuhanARK/WQUIZ." target="_blank">About</a></li>
                     <li class="nav-link profile"><a href="#">Profile
-                        <i class="fa-solid fa-caret-down"></i>
-                    </a>
+                            <i class="fa-solid fa-caret-down"></i>
+                        </a>
                         <ul class="drop-down">
                             <li class="my-reports">My Reports</li>
                             <li class="add-words">Add Words</li>
@@ -42,21 +42,10 @@
                         <span class="header-score">Score: 0 / 10</span>
                     </div>
 
-                    <h2 class="question-text">What is the Turkish word for "Dog"?</h2>
+                    <h2 class="question-text"><!-- questions are added automatically from javascript.js --></h2>
 
                     <div class="option-list">
-                        <!-- <div class="option">
-                            <span>A. Köpek</span>
-                        </div>
-                        <div class="option">
-                            <span>B. Köpük</span>
-                        </div>
-                        <div class="option">
-                            <span>C. Tanrı</span>
-                        </div>
-                        <div class="option">
-                            <span>D. Kopuk</span>
-                        </div> -->
+                        <!-- options are added automatically from javascript.js -->
                     </div>
 
                     <div class="quiz-footer">
@@ -116,30 +105,53 @@
         </div>
     </div>
 
-    <div class="r-p">
-        <div class="registration-page">
-            <form action="">
-                <h1>Login</h1>
-                <div class="input-box">
-                    <input type="text" class="username" placeholder="Username" required>
-                    <i class='bx bxs-user'></i>
-                </div>
-                <div class="input-box">
-                    <input type="password" class="password" placeholder="Password" required>
-                    <i class='bx bxs-lock-alt'></i>
-                </div>
+    <div class="regLog">
+        <div class="r-p" id="loginPage">
+            <div class="registration-page">
+                <form class="loginForm">
+                    <h1>Login</h1>
+                    <div class="input-box">
+                        <input type="text" class="username" placeholder="Username" required>
+                        <i class='bx bxs-user'></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" class="password" placeholder="Password" required>
+                        <i class='bx bxs-lock-alt'></i>
+                    </div>
 
-                <div class="remember-forgot">
-                    <label><input type="checkbox">Remember me</label>
-                    <a href="#" class="forgot-password" id="forgotPassword">Forgot password?</a>
-                </div>
+                    <div class="remember-forgot">
+                        <label><input type="checkbox">Remember me</label>
+                        <a href="#" class="forgot-password" id="forgotPassword">Forgot password?</a>
+                    </div>
 
-                <button type="submit" class="login-btn">Login</button>
+                    <button type="submit" class="login btn">Login</button>
 
-                <div class="register-link">
-                    <p>Don't have an account? <a href="#">Register</a></p>
-                </div>
-            </form>
+                    <div class="register-link">
+                        <p>Don't have an account? <a href="#" class="registerLink">Register</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="r-p" id="registerPage">
+            <div class="registration-page">
+                <form class="registerForm">
+                    <h1>Register</h1>
+                    <div class="input-box">
+                        <input type="text" class="newUsername" id="newUsername" placeholder="New Username" required>
+                        <i class='bx bxs-user'></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" class="newPassword" id="newPassword" placeholder="New Password" required>
+                        <i class='bx bxs-lock-alt'></i>
+                    </div>
+
+                    <button type="submit" class="register btn">Register</button>
+
+                    <div class="register-link">
+                        <p>Already have an account? <a href="#" class="loginLink">Login</a></p>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 
