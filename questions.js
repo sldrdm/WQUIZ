@@ -154,5 +154,5 @@ let questions = [
     //         "C. Dans",
     //         "D. Mızrak"
     //     ]
-    // }
+    // },
 ]
