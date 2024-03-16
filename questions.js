@@ -153,7 +153,7 @@ let questions = [
     //         "B. Dank",
     //         "C. Dans",
     //         "D. Mızrak"
-    //     ]
+    //     
     // }
  // {
     //     numb: 14,
